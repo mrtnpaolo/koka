@@ -124,7 +124,7 @@ readLineEx roots prompt putPrompt
                             '\\' : t -> do line2 <- readLines
                                            return (reverse t ++ "\n" ++ line2)
                             _        -> return line
-             _ -> return ""
+             _ -> return ":quit"
 
 addHistory line
   = do h <- readIORef vhistory
